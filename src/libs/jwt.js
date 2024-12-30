@@ -15,3 +15,4 @@ export function createAccessToken(payload){
   );
    })
 }
+console.log('TOKEN_SECRET en jwt.jsx:', TOKEN_SECRET);

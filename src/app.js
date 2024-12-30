@@ -1,3 +1,8 @@
+import dotenv from 'dotenv';
+
+// Cargar dotenv al inicio
+dotenv.config();
+
 import express from 'express'
 import morgan from 'morgan';
 import authRoutes from "./routes/auth.routes.js";
@@ -10,10 +15,10 @@ import clientRoutes from './routes/client.routes.js'
 
 const app=express();
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin: process.env.CLIENT_URL, // CLIENT_URL se define en .env
     credentials: true,
 }));
-app.use(morgan('dev'));
+app.use(morgan('dev')); 
 app.use(express.json())
 app.use(cookieParser())
 app.use('/api',authRoutes)
