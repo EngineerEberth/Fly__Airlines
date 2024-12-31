@@ -5,13 +5,13 @@ dotenv.config();
 
 import express from 'express'
 import morgan from 'morgan';
-import authRoutes from "./routes/auth.routes.js";
+import authRoutes from "./src/routes/auth.routes.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors'
-import destinyRoutes from './routes/destiny.routes.js'
-import pilotRoutes from './routes/pilot.routes.js'
-import planeRoutes from './routes/plane.routes.js'
-import clientRoutes from './routes/client.routes.js'
+import destinyRoutes from './src/routes/destiny.routes.js'
+import pilotRoutes from './src/routes/pilot.routes.js'
+import planeRoutes from './src/routes/plane.routes.js'
+import clientRoutes from './src/routes/client.routes.js'
 
 const app=express();
 app.use(cors({

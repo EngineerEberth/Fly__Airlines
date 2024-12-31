@@ -1,11 +1,11 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import app from './src/app.js';
-import { connectDB } from './src/bd.js';
+import app from './app.js';
+import { connectDB } from './bd.js';
 
-
+// Conectar a la base de datos
 connectDB();
-app.listen(process.env.PORT, () => {
-    console.log('Server on port', process.env.PORT);
-});
+
+// Exportar la app para que Vercel la utilice
+export default app;
