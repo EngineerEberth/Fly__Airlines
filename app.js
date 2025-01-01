@@ -15,7 +15,7 @@ import clientRoutes from './src/routes/client.routes.js';
 
 const app = express();
 app.use(cors({
-    origin: process.env.CLIENT_URL, // CLIENT_URL se define en .env
+    origin: "https://fly-airlines-backend-3.onrender.com/", // CLIENT_URL se define en .env
     credentials: true,
 }));
 app.use(morgan('dev'));
