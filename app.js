@@ -21,6 +21,10 @@ app.use(cors({
 app.use(morgan('dev')); 
 app.use(express.json())
 app.use(cookieParser())
+// Ruta de prueba
+app.get('/api/test', (req, res) => {
+    res.json({ message: 'API funcionando correctamente' });
+});
 app.use('/api',authRoutes)
 app.use('/api',destinyRoutes)
 app.use('/api',pilotRoutes)
