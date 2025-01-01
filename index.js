@@ -7,13 +7,13 @@ import { connectDB } from './bd.js';
 // Conectar a la base de datos
 connectDB();
 
-// Solo ejecutar el servidor si no estamos en Vercel
-if (process.env.NODE_ENV !== 'production') {
-    const PORT = process.env.PORT || 4000;
-    app.listen(PORT, () => {
-        console.log(`Servidor corriendo en puerto ${PORT}`);
-    });
-}
+// Determinar el puerto
+const PORT = process.env.PORT || 4000;
 
-// Exportar la app para que Vercel la utilice
+// Iniciar el servidor
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en puerto ${PORT}`);
+});
+
+// Exportar la app para entornos como Vercel
 export default app;
